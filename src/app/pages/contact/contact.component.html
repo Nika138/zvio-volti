@@ -1,1 +1,289 @@
-<p>contact works!</p>
+<!-- Contact Hero Section -->
+<section class="hero-gradient relative overflow-hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+    <div class="text-center text-white">
+      <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+        <span class="text-orange-400">საკონტაქტო</span> ინფორმაცია
+      </h1>
+      <p class="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">
+        მოგვწერეთ, დაგვირეკეთ ან ეწვიეთ ჩვენს მაღაზიას. ჩვენი გამოცდილი გუნდი
+        მზადაა დაგეხმაროთ საუკეთესო ბატარეის არჩევაში.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Details -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">
+          საკონტაქტო დეტალები
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Phone -->
+          <div
+            class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-6 card-hover"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                  />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">ტელეფონი</h3>
+                <p class="text-2xl font-bold text-orange-600 mb-2">
+                  {{ contactInfo.phone }}
+                </p>
+                <p class="text-2xl font-bold text-orange-600 mb-2">
+                  {{ contactInfo.phone2 }}
+                </p>
+                <p class="text-2xl font-bold text-orange-600 mb-2">
+                  {{ contactInfo.phone3 }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div
+            class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 card-hover"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">მისამართი</h3>
+                <p class="text-gray-700 mb-2">{{ contactInfo.address }}</p>
+                <button
+                  class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
+                >
+                  რუკაზე ნახვა
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Working Hours -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">სამუშაო საათები</h2>
+
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8">
+          <div class="text-center mb-8">
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation"
+            >
+              <span class="text-white text-3xl">🕒</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+              {{ contactInfo.workingHours.note }}
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-white rounded-xl p-4 shadow-sm">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-900"
+                  >ორშაბათი - კვირა</span
+                >
+                <span class="text-orange-600 font-bold text-lg">{{
+                  contactInfo.workingHours.weekdays
+                }}</span>
+              </div>
+            </div>
+
+            <div class="bg-orange-500 text-white rounded-xl p-4">
+              <div class="text-center">
+                <p class="font-semibold mb-2">⚡ ღია ვართ ყოველდღე!</p>
+                <p class="text-sm opacity-90">
+                  შვებულება არ გვაქვს - ყოველთვის ვართ მზად დაგეხმაროთ
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col space-y-2 text-center">
+            <button
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone }}
+            </button>
+            <button
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone2 }}
+            </button>
+            <button
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone3 }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Images Gallery -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">ჩვენი მაღაზია</h2>
+      <p class="text-xl text-gray-600">
+        იხილეთ ჩვენი მაღაზიის ფოტოები და დარწმუნდით ჩვენს პროფესიონალიზმში
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        *ngFor="let image of shopImages; let i = index"
+        class="group relative overflow-hidden rounded-2xl shadow-lg card-hover"
+      >
+        <div class="aspect-w-4 aspect-h-3 bg-gray-200">
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+        </div>
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-white font-bold text-lg mb-2">{{ image.title }}</h3>
+            <div class="flex items-center text-orange-400">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="text-sm">დაწვრილებით</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">რას გთავაზობთ</h2>
+      <p class="text-xl text-gray-600">
+        სრული სპექტრის სერვისი ავტობატარეებისთვის
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div
+        class="text-center card-hover bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4"
+        >
+          <span class="text-white text-2xl">🔋</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">ავტობატარეები</h3>
+        <p class="text-gray-600 text-sm">ყველა ტიპის ავტომობილისთვის</p>
+      </div>
+
+      <div
+        class="text-center card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4"
+        >
+          <span class="text-white text-2xl">🔧</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">დაყენება</h3>
+        <p class="text-gray-600 text-sm">უფასო პროფესიონალური დაყენება</p>
+      </div>
+
+      <div
+        class="text-center card-hover bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4"
+        >
+          <span class="text-white text-2xl">✅</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">გარანტია</h3>
+        <p class="text-gray-600 text-sm">ოფიციალური გარანტია ყველა პროდუქტზე</p>
+      </div>
+
+      <div
+        class="text-center card-hover bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4"
+        >
+          <span class="text-white text-2xl">💬</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">კონსულტაცია</h3>
+        <p class="text-gray-600 text-sm">ექსპერტული რჩევები უფასოდ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        მზად ხართ ჩვენთან სტუმრობისთვის?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8">
+        ჩამოდით ჩვენს მაღაზიაში და მიიღეთ პროფესიონალური კონსულტაცია. ჩვენი
+        ტექნიკოსები ადგილზევე დაგიყენებენ ბატარეას.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          📞 დაგვირეკეთ ახლავე
+        </button>
+        <button
+          class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+        >
+          📍 მისამართის ნახვა
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
