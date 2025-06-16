@@ -9,22 +9,21 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  // Shop images - replace with your actual image paths
   shopImages = [
     {
-      src: 'assets/images/shop-exterior.jpg', // Replace with your image path
+      src: 'images/garet.jpeg',
       alt: 'Zvio Shop - გარე ხედი',
       title: 'ჩვენი მაღაზიის გარე ხედი',
     },
     {
-      src: 'assets/images/shop-interior.jpg', // Replace with your image path
+      src: 'images/shignit1.jpeg',
       alt: 'Zvio Shop - შიდა ხედი',
       title: 'მაღაზიის შიდა ხედი - ბატარეების ასორტიმენტი',
     },
     {
-      src: 'assets/images/shop-service.jpg', // Replace with your image path
-      alt: 'Zvio Shop - სერვისი',
-      title: 'ბატარეის დაყენების სერვისი',
+      src: 'images/shignit2.jpeg',
+      alt: 'Zvio Shop - შიდა ხედი',
+      title: 'მაღაზიის შიდა ხედი - ბატარეების ასორტიმენტი',
     },
   ];
 
@@ -34,8 +33,8 @@ export class ContactComponent {
     phone3: '+995 593 190 107',
     address: 'თბილისი, საქართველო',
     workingHours: {
-      weekdays: '10:00 - 19:00',
-      weekend: '10:00 - 19:00',
+      weekdays: '9:00 - 19:00',
+      weekend: '9:00 - 19:00',
       note: 'ღია ვართ კვირის ყველა დღეს',
     },
   };

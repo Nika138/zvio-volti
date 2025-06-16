@@ -1,43 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
-  isProductsMenuOpen = false;
+  currentRoute = '';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.currentRoute = event.urlAfterRedirects;
+      });
+
+    this.currentRoute = this.router.url;
+  }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    if (!this.isMobileMenuOpen) {
-      this.isProductsMenuOpen = false;
-    }
   }
 
-  toggleProductsMenu(): void {
-    this.isProductsMenuOpen = !this.isProductsMenuOpen;
+  isActiveRoute(route: string): boolean {
+    return (
+      this.currentRoute === route ||
+      (route === '/' && this.currentRoute === '') ||
+      (route === '/' && this.currentRoute === '/')
+    );
   }
 
-  closeMobileMenu(): void {
+  navigateAndCloseMenu(route: string): void {
+    this.router.navigate([route]);
     this.isMobileMenuOpen = false;
-    this.isProductsMenuOpen = false;
-  }
-
-  onDocumentClick(event: Event): void {
-    const target = event.target as HTMLElement;
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    if (
-      this.isMobileMenuOpen &&
-      !mobileMenuButton?.contains(target) &&
-      !mobileMenu?.contains(target)
-    ) {
-      this.closeMobileMenu();
-    }
   }
 }
