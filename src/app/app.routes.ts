@@ -15,6 +15,11 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'brands',
+    loadComponent: () =>
+      import('./pages/brands/brands.component').then((c) => c.BrandsComponent),
+  },
+  {
     path: 'not-found',
     loadComponent: () =>
       import('./pages/not-found/not-found.component').then(

@@ -1,5 +1,4 @@
 <header class="sticky top-0 z-50 bg-white shadow-lg">
-  <!-- Top contact bar -->
   <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-center items-center py-2 text-sm">
@@ -33,11 +32,9 @@
     </div>
   </div>
 
-  <!-- Main navigation -->
   <div class="bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
         <div class="flex items-center">
           <a [routerLink]="['/']" class="logo-link flex items-center space-x-3">
             <div
@@ -52,7 +49,6 @@
           </a>
         </div>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center space-x-8">
           <a
             [routerLink]="['/']"
@@ -62,8 +58,8 @@
             მთავარი
           </a>
           <a
-            [routerLink]="['/products']"
-            [class.active]="isActiveRoute('/products')"
+            [routerLink]="['/brands']"
+            [class.active]="isActiveRoute('/brands')"
             class="nav-link text-gray-700 hover:text-blue-900 font-semibold transition-colors duration-200"
           >
             ბრენდები
@@ -77,7 +73,6 @@
           </a>
         </nav>
 
-        <!-- Mobile menu button -->
         <div class="flex items-center space-x-4">
           <button
             class="lg:hidden p-2 text-gray-700 hover:text-blue-900 transition-colors duration-200"
@@ -96,7 +91,6 @@
     </div>
   </div>
 
-  <!-- Mobile Navigation -->
   <div
     class="lg:hidden bg-white border-t border-gray-200"
     [class.hidden]="!isMobileMenuOpen"
@@ -105,14 +99,18 @@
       <a
         [routerLink]="['/']"
         [class.active]="isActiveRoute('/home')"
-        class="block px-3 py-2 text-blue-900 font-semibold bg-blue-50 rounded-md"
+        class="block px-3 py-2 text-gray-700 font-semibold rounded-md hover:bg-gray-50 hover:text-blue-900 transition-colors duration-200"
+        [class.bg-blue-50]="isActiveRoute('/home')"
+        [class.text-blue-900]="isActiveRoute('/home')"
         >მთავარი</a
       >
 
       <a
-        [routerLink]="['/products']"
-        [class.active]="isActiveRoute('/products')"
-        class="block px-3 py-2 text-blue-900 font-semibold bg-blue-50 rounded-md"
+        [routerLink]="['/brands']"
+        [class.active]="isActiveRoute('/brands')"
+        class="block px-3 py-2 text-gray-700 font-semibold rounded-md hover:bg-gray-50 hover:text-blue-900 transition-colors duration-200"
+        [class.bg-blue-50]="isActiveRoute('/brands')"
+        [class.text-blue-900]="isActiveRoute('/brands')"
       >
         ბრენდები
       </a>
@@ -120,7 +118,9 @@
       <a
         [routerLink]="['/contact']"
         [class.active]="isActiveRoute('/contact')"
-        class="block px-3 py-2 text-gray-700 font-semibold rounded-md hover:bg-gray-50"
+        class="block px-3 py-2 text-gray-700 font-semibold rounded-md hover:bg-gray-50 hover:text-blue-900 transition-colors duration-200"
+        [class.bg-blue-50]="isActiveRoute('/contact')"
+        [class.text-blue-900]="isActiveRoute('/contact')"
         >საკონტაქტო</a
       >
     </div>
