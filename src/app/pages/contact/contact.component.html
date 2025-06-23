@@ -77,7 +77,8 @@
                 <h3 class="text-lg font-bold text-gray-900 mb-1">მისამართი</h3>
                 <p class="text-gray-700 mb-2">{{ contactInfo.address }}</p>
                 <button
-                  class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
+                  (click)="getDirections()"
+                  class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 cursor-pointer"
                 >
                   რუკაზე ნახვა
                 </button>
@@ -123,17 +124,20 @@
 
           <div class="mt-8 flex flex-col space-y-2 text-center">
             <button
-              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              (click)="callBusiness(contactInfo.phone)"
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 cursor-pointer rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone }}
             </button>
             <button
-              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              (click)="callBusiness(contactInfo.phone2)"
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 cursor-pointer rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone2 }}
             </button>
             <button
-              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              (click)="callBusiness(contactInfo.phone3)"
+              class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 cursor-pointer rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               📞 დაგვირეკეთ ახლავე: {{ contactInfo.phone3 }}
             </button>
