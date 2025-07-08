@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +10,33 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle('კონტაქტი | Zvio Shop');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'დაგვიკავშირდით Zvioshop-ზე: ტელეფონი, ელ-ფოსტა, მისამართი და სამუშაო საათები.',
+      },
+      {
+        name: 'keywords',
+        content: 'კონტაქტი, zvio shop, ტელეფონი, ელ-ფოსტა, მაღაზიის მისამართი',
+      },
+      { name: 'robots', content: 'index, follow' },
+      { property: 'og:title', content: 'Zvio Shop | დაგვიკავშირდით' },
+      {
+        property: 'og:description',
+        content:
+          'დაგვიკავშირდით ტელეფონით ან ელფოსტით. ასევე შეგიძლიათ მოინახულოთ ჩვენი მაღაზია თბილისში.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://zvioshop.store/assets/contact-preview.jpg',
+      },
+      { property: 'og:url', content: 'https://zvioshop.store/contact' },
+    ]);
+  }
+
   shopImages = [
     {
       src: 'images/garet.jpeg',
